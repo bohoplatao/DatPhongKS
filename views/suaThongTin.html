@@ -1,0 +1,126 @@
+<div class="container-fluid" style="padding-top: 100px">
+    <div class="container rounded-2 p-4 mb-5" style="border: 2px solid rgb(173,100,24); width: 50%">
+        <form ng-submit="capNhatDatPhong()">
+            <h3 class="text-white text-center mb-4">{{ title }}</h3>
+            <div class="row">
+                <p class="text-primary fw-bold fs-5">Thông tin người đặt</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-white">Họ và tên</label>
+                        <input type="text" class="form-control bg-transparent text-white" ng-model="inputValue.hoTen">
+                        <p class="text-danger" ng-if="validate.hoTen">Vui lòng nhập đúng họ tên</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-white">Căn cước công dân</label>
+                        <input type="text" class="form-control bg-transparent text-white" ng-model="inputValue.cccd">
+                        <p class="text-danger" ng-if="validate.cccd">Vui lòng nhập đúng cccd</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-white">Email</label>
+                        <input type="text" class="form-control bg-transparent text-white" ng-model="inputValue.email">
+                        <p class="text-danger" ng-if="validate.email">Vui lòng nhập đúng email</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-white">Số điện thoại</label>
+                        <input type="text" class="form-control bg-transparent text-white" ng-model="inputValue.sdt">  
+                        <p class="text-danger" ng-if="validate.sdt">Vui lòng nhập đúng sđt</p>    
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p class="text-primary fw-bold fs-5">Thông tin phòng đặt</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-white">Loại phòng</label>
+                        <select class="form-select bg-transparent text-white" aria-label="Large select example" ng-model="selectValue.loaiPhong">
+                            <option class="bg-dark" selected>Chọn</option>
+                            <option class="bg-dark" value="Phòng 1 mình">Phòng 1 mình</option>
+                            <option class="bg-dark" value="Phòng 2 mình">Phòng 2 mình</option>
+                            <option class="bg-dark" value="Phòng gia đình">Phòng gia đình</option>
+                        </select>
+                        <p class="text-danger" ng-if="validate.loaiPhong">Vui lòng chọn loại phòng</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-white">Kích thước phòng</label>
+                        <select class="form-select bg-transparent text-white" aria-label="Large select example" ng-model="selectValue.kichThuocPhong">
+                            <option class="bg-dark" selected>Chọn</option>
+                            <option class="bg-dark" value="Bé">Bé</option>
+                            <option class="bg-dark" value="Vừa">Vừa</option>
+                            <option class="bg-dark" value="Lớn">Lớn</option>
+                            <option class="bg-dark" value="Cực lớn">Cực lớn</option>
+                        </select>
+                        <p class="text-danger" ng-if="validate.kichThuocPhong">Vui lòng chọn kích thước phòng</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-white">Ngày đặt phòng</label>
+                        <input type="date" class="form-control bg-transparent text-white" ng-model="inputValue.ngayDat">
+                        <p class="text-danger" ng-if="validate.ngayDatPhong">Vui lòng thiết lập ngày đặt phòng</p>
+                        <p class="text-danger" ng-if="validateNgayDat(inputValue.ngayDat)">Ngày đặt phải lớn hơn hoặc bằng ngày hôm nay</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold text-white">Ngày trả phòng</label>
+                        <input type="date" class="form-control bg-transparent text-white" ng-model="inputValue.ngayTra">
+                        <p class="text-danger" ng-if="validate.ngayTraPhong">Vui lòng thiết lập ngày trả phòng</p>
+                        <p class="text-danger" ng-if="validateNgayTra(inputValue.ngayDat, inputValue.ngayTra)">Ngày trả phải lớn hơn hoặc bằng ngày đặt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <label class="form-label fw-bold text-primary fs-5">Quy định phòng</label>
+            </div>
+            <div class="row">
+                <label class="form-label text-white">Quy định hút thuốc</label>
+                <div class="col-md-6">
+                    <input class="form-check-input" type="radio" name="hutThuoc" id="df1" ng-model="rdoHutThuoc" value="Có hút thuốc">
+                    <label class="form-check-label text-white" for="df1">Có hút thuốc</label>
+                </div>
+                <div class="col-md-6">
+                    <input class="form-check-input" type="radio" name="hutThuoc" id="df2" ng-model="rdoHutThuoc" value="Không hút thuốc">
+                    <label class="form-check-label text-white" for="df2">Không hút thuốc</label>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <label class="form-label text-white">Chọn loại giường</label>
+                <div class="col-md-6">
+                    <input class="form-check-input" type="radio" name="giuong" id="df3" ng-model="rdoLoaiGiuong" value="Giường đơn">
+                    <label class="form-check-label text-white" for="df3">Giường đơn</label>
+                </div>
+                <div class="col-md-6">
+                    <input class="form-check-input" type="radio" name="giuong" id="df4" ng-model="rdoLoaiGiuong" value="Giường đôi">
+                    <label class="form-check-label text-white" for="df4">Giường đôi</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3">
+                    <label class="form-label fw-bold text-white">Ghi chú</label>
+                    <textarea class="form-control text-white p-2 bg-transparent" style="height: 100px" ng-model="inputValue.ghiChu"></textarea>
+                    <p class="text-danger" ng-if="validate.ghiChu">Vui lòng nhập ghi chú</p>
+                </div>
+            </div>
+            <div class="mt-3 d-flex justify-content-end">
+                <button type="button" class="btn btn-outline-danger me-2" onclick="window.history.back()">Quay lại</button>
+                <button type="submit" class="btn btn-outline-success">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+</div>

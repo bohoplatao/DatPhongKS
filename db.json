@@ -1,0 +1,74 @@
+{
+  "DatPhong": [
+    {
+      "hoTen": "Bố già update",
+      "cccd": "004857337284",
+      "email": "bogia@gmail.com",
+      "sdt": "0584773728",
+      "loaiPhong": "Phòng 1 mình",
+      "kichThuocPhong": "Bé",
+      "ngayDatPhong": "2024-01-29T17:00:00.000Z",
+      "ngayTraPhong": "2024-01-30T17:00:00.000Z",
+      "hutThuoc": "Có hút thuốc",
+      "loaiGiuong": "Giường đơn",
+      "ghiChu": "Cho tôi phòng yên tĩnh",
+      "id": "39b0"
+    },
+    {
+      "id": "1e2a",
+      "hoTen": "Bố khỉ",
+      "cccd": "005847293729",
+      "email": "bokhi@gmail.com",
+      "sdt": "0347575442",
+      "loaiPhong": "Phòng 2 mình",
+      "kichThuocPhong": "Lớn",
+      "ngayDatPhong": "2024-01-29T17:00:00.000Z",
+      "ngayTraPhong": "2024-01-31T17:00:00.000Z",
+      "hutThuoc": "Có hút thuốc",
+      "loaiGiuong": "Giường đôi",
+      "ghiChu": "Không có ghi chú"
+    },
+    {
+      "hoTen": "Lò Thị Bưởi",
+      "cccd": "004838724834",
+      "email": "buoilt@gmail.com",
+      "sdt": "0359384835",
+      "loaiPhong": "Phòng gia đình",
+      "kichThuocPhong": "Lớn",
+      "ngayDatPhong": "2024-01-30T17:00:00.000Z",
+      "ngayTraPhong": "2024-01-30T17:00:00.000Z",
+      "hutThuoc": "Không hút thuốc",
+      "loaiGiuong": "Giường đơn",
+      "ghiChu": "Ối đi mua phòng",
+      "id": "7fb4"
+    },
+    {
+      "hoTen": "Hoàng Cửu Bảo",
+      "cccd": "044938593830",
+      "email": "baohc@gmail.com",
+      "sdt": "0359430984",
+      "loaiPhong": "Phòng 1 mình",
+      "kichThuocPhong": "Vừa",
+      "ngayDatPhong": "2024-01-30T17:00:00.000Z",
+      "ngayTraPhong": "2024-02-02T17:00:00.000Z",
+      "hutThuoc": "Có hút thuốc",
+      "loaiGiuong": "Giường đôi",
+      "ghiChu": "Không có ghi chú",
+      "id": "a30d"
+    },
+    {
+      "hoTen": "Cù Xuân Hợp Occho",
+      "cccd": "019202007892",
+      "email": "cuhop@gmail.com",
+      "sdt": "0367663906",
+      "loaiPhong": "Phòng gia đình",
+      "kichThuocPhong": "Lớn",
+      "ngayDatPhong": "2024-02-20T17:00:00.000Z",
+      "ngayTraPhong": "2024-02-21T17:00:00.000Z",
+      "hutThuoc": "Có hút thuốc",
+      "loaiGiuong": "Giường đơn",
+      "ghiChu": "nice",
+      "id": "3fc9"
+    }
+  ]
+}

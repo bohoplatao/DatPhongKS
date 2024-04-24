@@ -1,0 +1,37 @@
+<div class="container" style="padding-top: 100px">
+    <h1 class="text-white mb-4">{{ title }}</h1>
+    <table class="table table-bordered table-hover">
+        <thead class="table-primary">
+            <th>STT</th>
+            <th>Tên KH</th>
+            <th>Loại phòng</th>
+            <th>Size</th>
+            <th>Ngày đặt</th>
+            <th>Ngày trả</th>
+            <th>Yêu cầu</th>
+            <th>Ghi chú</th>
+            <th class="text-center">Chức năng</th>
+        </thead>
+        <tbody ng-repeat="item in listDatPhong.slice().reverse() track by $index">
+            <tr class="table-dark">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ item.hoTen }}</td>
+                <td>{{ item.loaiPhong }}</td>
+                <td>{{ item.kichThuocPhong }}</td>
+                <td>{{ item.ngayDatPhong | date : 'dd/MM/yyyy'}}</td>
+                <td>{{ item.ngayTraPhong | date : 'dd/MM/yyyy'}}</td>
+                <td>{{ item.hutThuoc + ", " + item.loaiGiuong }}</td>
+                <td>{{ item.ghiChu }}</td>
+                <td class="text-center">
+                    <a href="#!/thong-tin-chi-tiet/{{item.id}}" class="text-decoration-none">
+                        <button class="btn btn-primary">Xem</button>
+                    </a>
+                    <a href="#!/cap-nhat-thong-tin/{{item.id}}" class="text-decoration-none">
+                        <button class="btn btn-warning">Sửa</button>
+                    </a>
+                    <button class="btn btn-danger" ng-click="deleteDatPhong(item.id)">Xóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
